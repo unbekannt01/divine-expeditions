@@ -28,7 +28,7 @@ const translations = {
     "tour.21-01.places":
       "Ayodhya, Kashi-Banaras, Khatu-Shyam, Salasar Balaji, Savariya",
 
-    "tour.01-02.name": "Magh-kumbh Haridwar Specila",
+    "tour.01-02.name": "Magh-kumbh Haridwar Special",
     "tour.01-02.date": "01-02-2026",
     "tour.01-02.days": "13/14 Days",
     "tour.01-02.daysNum": "14",

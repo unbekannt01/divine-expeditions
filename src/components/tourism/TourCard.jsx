@@ -5,12 +5,6 @@ import { motion } from "framer-motion";
 import { useLanguage } from "./LanguageContext.jsx";
 import ItineraryModal from "./ItineraryModal.jsx";
 
-/* Import local images (Vite way) */
-import kumbhImg from "../../../public/images/Kumbh.jpg";
-import haridwarImg from "../../../public/images/haridwar.jpg";
-import nepalImg from "../../../public/images/nepal.jpg";
-import puriImg from "../../../public/images/puri.jpg";
-
 const TourCard = ({ tourKey, index }) => {
   const { t } = useLanguage();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -21,12 +15,12 @@ const TourCard = ({ tourKey, index }) => {
   const places = t(`tour.${tourKey}.places`).split(", ");
   const busType = t(`tour.${tourKey}.busType`);
 
-  /* Map tourKey to local images */
+  /* Map tourKey to public images (NO IMPORTS) */
   const tourImages = {
-    "21-01": kumbhImg, // Mahakumbh / Kumbh Mela
-    "01-02": haridwarImg, // Haridwar Ganga Aarti
-    "15-02": nepalImg, // Muktinath Nepal
-    "22-02": puriImg, // Jagannath Puri
+    "21-01": "/images/Kumbh.jpg",     // Mahakumbh / Kumbh Mela
+    "01-02": "/images/haridwar.jpg",  // Haridwar Ganga Aarti
+    "15-02": "/images/Nepal.jpg",     // Muktinath Nepal
+    "22-02": "/images/puri.jpg",      // Jagannath Puri
   };
 
   return (
@@ -63,12 +57,10 @@ const TourCard = ({ tourKey, index }) => {
 
         {/* Content */}
         <div className="p-4 sm:p-5 flex flex-col grow">
-          {/* Title */}
           <h3 className="font-serif text-lg sm:text-xl font-bold text-foreground mb-3 line-clamp-2">
             {name}
           </h3>
 
-          {/* Destinations */}
           <div className="mb-4 grow">
             <p className="text-[10px] sm:text-xs font-bold text-accent/80 tracking-widest mb-2 uppercase">
               {t("destinations")}
@@ -78,7 +70,6 @@ const TourCard = ({ tourKey, index }) => {
             </p>
           </div>
 
-          {/* Price & Button */}
           <div className="flex items-center justify-between pt-4 border-t border-border/50 mt-auto">
             <div>
               <p className="text-[10px] sm:text-xs text-muted-foreground uppercase font-semibold">
@@ -101,7 +92,6 @@ const TourCard = ({ tourKey, index }) => {
         </div>
       </motion.div>
 
-      {/* Itinerary Modal */}
       <ItineraryModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
