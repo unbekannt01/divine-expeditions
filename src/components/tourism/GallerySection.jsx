@@ -2,22 +2,10 @@
 
 import { motion } from "framer-motion";
 import { useLanguage } from "./LanguageContext.jsx";
+import { galleryImages } from "@/data/galleryImages"; // ✅ ADD THIS
 
 const GallerySection = () => {
   const { t } = useLanguage();
-
-  // Local images from public/images folder
-  const galleryImages = [
-    { url: "/images/ayodhya.jpg", title: "Ayodhya" },
-    { url: "/images/haridwar.jpg", title: "Haridwar" },
-    { url: "/images/omkareshwar.jpg", title: "Omkareshwar" },
-    { url: "/images/khatu-shyam.jpg", title: "Khatu Shyam" },
-    { url: "/images/salasar.jpg", title: "Salasar Balaji" },
-    { url: "/images/nathdwara.jpg", title: "Nathdwara" },
-    { url: "/images/muktinath.png", title: "Muktinath" },
-    { url: "/images/puri.jpg", title: "Jagannathpuri" },
-    { url: "/images/prem-mandir.jpg", title: "Prem-Mandir" },
-  ];
 
   return (
     <section className="py-16 sm:py-20 md:py-28 relative bg-background">
@@ -50,11 +38,10 @@ const GallerySection = () => {
               <img
                 src={image.url}
                 alt={image.title}
+                loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              {/* Overlay */}
               <div className="absolute inset-0 bg-linear-to-t from-foreground/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              {/* Title */}
               <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                 <h3 className="inline-block text-black font-semibold text-sm sm:text-base bg-white rounded-full px-2 py-1">
                   {image.title}

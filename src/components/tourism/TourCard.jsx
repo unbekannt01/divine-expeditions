@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "./LanguageContext.jsx";
 import ItineraryModal from "./ItineraryModal.jsx";
+import { tourImages } from "@/data/tourImages"; // ✅ ADD THIS
 
 const TourCard = ({ tourKey, index }) => {
   const { t } = useLanguage();
@@ -14,14 +15,6 @@ const TourCard = ({ tourKey, index }) => {
   const price = t(`tour.${tourKey}.price`);
   const places = t(`tour.${tourKey}.places`).split(", ");
   const busType = t(`tour.${tourKey}.busType`);
-
-  /* Map tourKey to public images (NO IMPORTS) */
-  const tourImages = {
-    "21-01": "/images/Kumbh.jpg",     // Mahakumbh / Kumbh Mela
-    "01-02": "/images/haridwar.jpg",  // Haridwar Ganga Aarti
-    "15-02": "/images/Nepal.jpg",     // Muktinath Nepal
-    "22-02": "/images/puri.jpg",      // Jagannath Puri
-  };
 
   return (
     <>
@@ -35,7 +28,7 @@ const TourCard = ({ tourKey, index }) => {
         {/* Image Container */}
         <div className="relative h-40 sm:h-48 overflow-hidden bg-muted">
           <img
-            src={tourImages[tourKey]}
+            src={tourImages[tourKey]?.url}
             alt={name}
             loading="lazy"
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
