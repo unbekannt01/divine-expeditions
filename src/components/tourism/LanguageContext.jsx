@@ -153,7 +153,7 @@ const translations = {
       "Please carry your necessary medicines. The organizer reserves the right to modify the itinerary due to circumstances.",
 
     // Add bus type for each tour
-    "tour.21-01.busType": "Sleeper Coach 2x1",
+    "tour.21-01.busType": "Sleeper Coach 2x2",
     "tour.01-02.busType": "Sleeper Coach 2x2",
     "tour.15-02.busType": "Sleeper Coach 2x1",
     "tour.22-02.busType": "Sleeper Coach 2x2",
@@ -311,7 +311,7 @@ const translations = {
     "rule.health.text":
       "પોતાની જરૂરિયાત મુજબ દવા સાથે લેવાની રહેશે. સમય અને સંજોગો અનુસાર યાત્રામાં ફેરફાર કરવાનો હક આયોજકનો રહેશે.",
 
-    "tour.21-01.busType": "સ્લીપર કોચ 2x1",
+    "tour.21-01.busType": "સ્લીપર કોચ 2x2",
     "tour.01-02.busType": "સ્લીપર કોચ 2x2",
     "tour.15-02.busType": "સ્લીપર કોચ 2x1",
     "tour.22-02.busType": "સ્લીપર કોચ 2x2",

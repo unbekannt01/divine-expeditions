@@ -149,7 +149,7 @@ const HeroSection = () => {
           </div>
           <div className="flex items-center gap-2">
             <span className="text-lg sm:text-xl">⭐</span>
-            <span>500+ Happy Pilgrims</span>
+            <span>300+ Happy Pilgrims</span>
           </div>
         </motion.div>
       </div>
