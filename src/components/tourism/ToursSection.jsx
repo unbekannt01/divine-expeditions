@@ -7,7 +7,7 @@ import TourCard from "./TourCard.jsx"
 const ToursSection = () => {
   const { t } = useLanguage()
 
-  const tourKeys = ["rajasthan", "sangam", "prayagraj", "nepal"]
+  const tourKeys = ["21-01", "01-02", "15-02", "22-02"]
 
   return (
     <section id="tours" className="py-16 sm:py-20 md:py-28 relative bg-muted/30">
