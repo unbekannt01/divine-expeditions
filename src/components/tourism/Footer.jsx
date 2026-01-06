@@ -47,7 +47,7 @@ const Footer = () => {
           >
             <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0" />
             <span className="hidden sm:inline">+91 95101 16262</span>
-            <span className="sm:hidden">Call 1</span>
+            <span className="sm:hidden">Call</span>
           </a>
           <a
             href={whatsappURL}
