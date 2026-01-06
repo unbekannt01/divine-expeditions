@@ -1,37 +1,19 @@
 "use client"
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { useLanguage } from "./LanguageContext.jsx"
-import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const GallerySection = () => {
   const { t } = useLanguage()
-  const [currentIndex, setCurrentIndex] = useState(0)
 
   const galleryImages = [
-    { url: "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1000&h=700&fit=crop", title: "Holy Temple" },
-    {
-      url: "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=1000&h=700&fit=crop",
-      title: "Sacred Rivers",
-    },
-    {
-      url: "https://images.unsplash.com/photo-1548013146-72479768bada?w=1000&h=700&fit=crop",
-      title: "Spiritual Journey",
-    },
-    {
-      url: "https://images.unsplash.com/photo-1585577529540-b44e9831ef4e?w=1000&h=700&fit=crop",
-      title: "Mountain Temples",
-    },
+    { url: "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&h=400&fit=crop", title: "Holy Temple" },
+    { url: "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=600&h=400&fit=crop", title: "Sacred Rivers" },
+    { url: "https://images.unsplash.com/photo-1548013146-72479768bada?w=600&h=400&fit=crop", title: "Spiritual Journey" },
+    { url: "https://images.unsplash.com/photo-1585577529540-b44e9831ef4e?w=600&h=400&fit=crop", title: "Mountain Temples" },
+    { url: "https://images.unsplash.com/photo-1532375810709-75b1da00537c?w=600&h=400&fit=crop", title: "Ancient Shrines" },
+    { url: "https://images.unsplash.com/photo-1609920658906-8223bd289001?w=600&h=400&fit=crop", title: "Divine Moments" },
   ]
-
-  const goToPrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1))
-  }
-
-  const goToNext = () => {
-    setCurrentIndex((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1))
-  }
 
   return (
     <section className="py-16 sm:py-20 md:py-28 relative bg-background">
@@ -46,63 +28,33 @@ const GallerySection = () => {
           <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3">
             {t("galleryTitle")}
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto rounded-full" />
+          <div className="w-20 h-1 bg-linear-to-r from-primary via-secondary to-accent mx-auto rounded-full" />
         </motion.div>
 
-        {/* Gallery */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="relative rounded-2xl overflow-hidden shadow-2xl mb-8"
-        >
-          <div className="relative h-[250px] sm:h-[400px] md:h-[500px] bg-muted">
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={currentIndex}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
-                src={galleryImages[currentIndex].url}
-                alt={galleryImages[currentIndex].title}
-                className="w-full h-full object-cover"
+        {/* Gallery Grid - 3x2 Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
+          {galleryImages.map((image, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="relative rounded-2xl overflow-hidden shadow-lg group cursor-pointer aspect-4/3"
+            >
+              <img
+                src={image.url}
+                alt={image.title}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-            </AnimatePresence>
-
-            {/* Navigation Buttons */}
-            <button
-              onClick={goToPrev}
-              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-10 p-2 sm:p-3 rounded-full bg-primary/80 hover:bg-primary text-white transition shadow-lg"
-              aria-label="Previous image"
-            >
-              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-            </button>
-            <button
-              onClick={goToNext}
-              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-10 p-2 sm:p-3 rounded-full bg-primary/80 hover:bg-primary text-white transition shadow-lg"
-              aria-label="Next image"
-            >
-              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
-            </button>
-
-            {/* Image Counter */}
-            <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 bg-black/50 text-white px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold backdrop-blur-sm">
-              {currentIndex + 1} / {galleryImages.length}
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Dots Navigation */}
-        <div className="flex justify-center gap-2">
-          {galleryImages.map((_, i) => (
-            <motion.button
-              key={i}
-              onClick={() => setCurrentIndex(i)}
-              className={`h-2 rounded-full transition ${i === currentIndex ? "bg-primary w-8" : "bg-muted w-2 hover:bg-muted-foreground"}`}
-              whileHover={{ scale: 1.2 }}
-              aria-label={`Go to image ${i + 1}`}
-            />
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-linear-to-t from-foreground/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* Title */}
+              <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <h3 className="text-white font-semibold text-sm sm:text-base">{image.title}</h3>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>

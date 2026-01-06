@@ -48,7 +48,7 @@ const TestimonialsSection = () => {
               className="glass-card p-6 relative group"
             >
               {/* Quote Icon */}
-              <div className="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+              <div className="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-linear-to-r from-primary to-secondary flex items-center justify-center">
                 <Quote className="w-5 h-5 text-primary-foreground" />
               </div>
 
@@ -66,7 +66,7 @@ const TestimonialsSection = () => {
 
               {/* Author */}
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 flex items-center justify-center text-2xl">
+                <div className="w-12 h-12 rounded-full bg-linear-to-r from-primary/20 to-secondary/20 flex items-center justify-center text-2xl">
                   {testimonial.avatar}
                 </div>
                 <div>
@@ -80,7 +80,7 @@ const TestimonialsSection = () => {
               </div>
 
               {/* Hover Glow */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/0 to-secondary/0 group-hover:from-primary/5 group-hover:to-secondary/5 transition-all duration-500" />
+              <div className="absolute inset-0 rounded-2xl bg-linear-to-r from-primary/0 to-secondary/0 group-hover:from-primary/5 group-hover:to-secondary/5 transition-all duration-500" />
             </motion.div>
           ))}
         </div>

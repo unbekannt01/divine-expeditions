@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import { motion, AnimatePresence } from "framer-motion"
-import { useLanguage } from "./LanguageContext.jsx"
-import { getBookingURL } from "../../utils/whatsapp.js"
-import { X } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "./LanguageContext.jsx";
+import { getBookingURL } from "../../utils/whatsapp.js";
+import { X } from "lucide-react";
 
 const ItineraryModal = ({ isOpen, onClose, tourKey }) => {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
 
-  const daysNum = Number.parseInt(t(`tour.${tourKey}.daysNum`))
-  const days = Array.from({ length: daysNum }, (_, i) => i + 1)
-  const tourName = t(`tour.${tourKey}.name`)
-  const tourPrice = t(`tour.${tourKey}.price`)
+  const daysNum = Number.parseInt(t(`tour.${tourKey}.daysNum`));
+  const days = Array.from({ length: daysNum }, (_, i) => i + 1);
+  const tourName = t(`tour.${tourKey}.name`);
+  const tourPrice = t(`tour.${tourKey}.price`);
 
   return (
     <AnimatePresence>
@@ -31,19 +31,24 @@ const ItineraryModal = ({ isOpen, onClose, tourKey }) => {
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="fixed inset-4 sm:inset-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 z-50 bg-card rounded-2xl border border-border shadow-2xl max-w-2xl max-h-[90vh] overflow-y-auto"
+            className="fixed inset-4 sm:inset-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 z-50 bg-white dark:bg-card rounded-2xl border border-border shadow-2xl max-w-2xl max-h-[90vh] overflow-y-auto"
           >
             {/* Header */}
-            <div className="sticky top-0 bg-card border-b border-border p-4 sm:p-6 flex items-center justify-between gap-4">
+            <div className="sticky top-0 bg-white dark:bg-card border-b border-border p-4 sm:p-6 flex items-center justify-between gap-4 z-10">
+              {" "}
               <div className="min-w-0 flex-1">
-                <h2 className="font-serif text-xl sm:text-2xl font-bold text-foreground line-clamp-2">{tourName}</h2>
-                <p className="text-sm text-muted-foreground mt-1">{t(`tour.${tourKey}.days`)} Tour Package</p>
+                <h2 className="font-serif text-xl sm:text-2xl font-bold text-foreground line-clamp-2">
+                  {tourName}
+                </h2>
+                <p className="text-sm text-muted-foreground mt-1">
+                  {t(`tour.${tourKey}.days`)} Tour Package
+                </p>
               </div>
               <motion.button
                 onClick={onClose}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className="p-2 hover:bg-muted rounded-lg transition flex-shrink-0"
+                className="p-2 hover:bg-muted rounded-lg transition shrink-0"
               >
                 <X className="w-6 h-6" />
               </motion.button>
@@ -55,7 +60,7 @@ const ItineraryModal = ({ isOpen, onClose, tourKey }) => {
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl p-4 sm:p-5 border border-primary/20"
+                className="bg-linear-to-r from-primary/5 to-secondary/5 rounded-xl p-4 sm:p-5 border border-primary/20"
               >
                 <h3 className="font-serif font-bold text-foreground mb-4 flex items-center gap-2">
                   <span className="text-xl">✓</span>
@@ -79,8 +84,10 @@ const ItineraryModal = ({ isOpen, onClose, tourKey }) => {
 
               {/* Itinerary */}
               <div>
-                <h3 className="font-serif font-bold text-foreground mb-4 text-lg">Day-by-Day Itinerary</h3>
-                <div className="space-y-3 max-h-[300px] overflow-y-auto pr-2">
+                <h3 className="font-serif font-bold text-foreground mb-4 text-lg">
+                  Day-by-Day Itinerary
+                </h3>
+                <div className="space-y-3 max-h-75 overflow-y-auto pr-2">
                   {days.map((day) => (
                     <motion.div
                       key={day}
@@ -89,13 +96,15 @@ const ItineraryModal = ({ isOpen, onClose, tourKey }) => {
                       transition={{ delay: day * 0.02 }}
                       className="flex gap-3 sm:gap-4 p-3 rounded-lg bg-muted/40 hover:bg-muted/70 transition"
                     >
-                      <div className="flex-shrink-0">
-                        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-xs sm:text-sm font-bold text-white">
+                      <div className="shrink-0">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-linear-to-br from-primary to-secondary flex items-center justify-center text-xs sm:text-sm font-bold text-black">
                           {day}
                         </div>
                       </div>
-                      <div className="flex-grow min-w-0">
-                        <p className="text-xs sm:text-sm text-foreground/80">{t(`itinerary.${tourKey}.day${day}`)}</p>
+                      <div className="grow min-w-0">
+                        <p className="text-xs sm:text-sm font-semibold">
+                          {t(`itinerary.${tourKey}.day${day}`)}
+                        </p>
                       </div>
                     </motion.div>
                   ))}
@@ -111,7 +120,7 @@ const ItineraryModal = ({ isOpen, onClose, tourKey }) => {
                 animate={{ opacity: 1, y: 0 }}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="block w-full py-4 px-4 bg-gradient-to-r from-primary via-secondary to-accent text-primary-foreground font-bold rounded-xl hover:shadow-lg transition-shadow text-center text-sm sm:text-base"
+                className="block w-full py-4 px-4 bg-linear-to-r from-primary via-secondary to-accent text-primary-foreground font-bold rounded-xl hover:shadow-lg transition-shadow text-center text-sm sm:text-base"
               >
                 Book This Tour - {tourPrice}
               </motion.a>
@@ -120,7 +129,7 @@ const ItineraryModal = ({ isOpen, onClose, tourKey }) => {
         </>
       )}
     </AnimatePresence>
-  )
-}
+  );
+};
 
-export default ItineraryModal
+export default ItineraryModal;

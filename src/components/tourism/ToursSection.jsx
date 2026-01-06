@@ -28,7 +28,7 @@ const ToursSection = () => {
           <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3">
             {t("toursTitle")}
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto rounded-full" />
+          <div className="w-20 h-1 bg-linear-to-r from-primary via-secondary to-accent mx-auto rounded-full" />
         </motion.div>
 
         {/* Tour Cards Grid */}

@@ -1,3 +1,7 @@
+@import "tailwindcss";
+
+/* Premium Pilgrimage Tourism Design System - Modern & Mobile-First */
+
 @layer base {
   :root {
     /* Warm Gold & Deep Saffron Primary */
@@ -64,15 +68,7 @@
     --input: 220 15% 28%;
     --ring: 39 89% 55%;
   }
-}
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Premium Pilgrimage Tourism Design System - Modern & Mobile-First */
-
-@layer base {
   * {
     border-color: hsl(var(--border));
   }

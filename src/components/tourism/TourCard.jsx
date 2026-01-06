@@ -39,20 +39,20 @@ const TourCard = ({ tourKey, index }) => {
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           />
           {/* Days Badge */}
-          <div className="absolute top-3 left-3 px-3 py-1.5 bg-gradient-to-r from-accent to-primary text-accent-foreground text-xs sm:text-sm font-bold rounded-full shadow-lg">
+          <div className="absolute top-3 left-3 px-3 py-1.5 bg-linear-to-r from-accent to-primary text-accent-foreground text-xs sm:text-sm font-bold rounded-full shadow-lg">
             {daysNum} {t("days").toUpperCase()}
           </div>
           {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-foreground/40 via-transparent to-transparent" />
         </div>
 
         {/* Content */}
-        <div className="p-4 sm:p-5 flex flex-col flex-grow">
+        <div className="p-4 sm:p-5 flex flex-col grow">
           {/* Title */}
           <h3 className="font-serif text-lg sm:text-xl font-bold text-foreground mb-3 line-clamp-2">{name}</h3>
 
           {/* Destinations */}
-          <div className="mb-4 flex-grow">
+          <div className="mb-4 grow">
             <p className="text-[10px] sm:text-xs font-bold text-accent/80 tracking-widest mb-2 uppercase">
               {t("destinations")}
             </p>
@@ -67,7 +67,7 @@ const TourCard = ({ tourKey, index }) => {
               <p className="text-[10px] sm:text-xs text-muted-foreground uppercase font-semibold">
                 {t("startingFrom")}
               </p>
-              <p className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <p className="text-lg sm:text-2xl font-bold text-foreground">
                 {price}
               </p>
             </div>
@@ -75,7 +75,7 @@ const TourCard = ({ tourKey, index }) => {
               onClick={() => setIsModalOpen(true)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-3 sm:px-4 py-2 text-xs sm:text-sm font-bold text-primary-foreground bg-gradient-to-r from-primary to-secondary rounded-lg shadow-md hover:shadow-lg transition-all"
+              className="px-3 sm:px-4 py-2 text-xs sm:text-sm font-bold text-primary-foreground bg-linear-to-r from-primary to-secondary rounded-lg shadow-md hover:shadow-lg transition-all"
             >
               {t("viewItinerary")}
             </motion.button>

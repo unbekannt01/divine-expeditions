@@ -14,7 +14,7 @@ const Footer = () => {
     <footer className="relative py-12 sm:py-16 border-t border-border bg-muted/30">
       {/* Background Glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] sm:w-[600px] h-[200px] sm:h-[300px] bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-100 sm:w-150 h-50 sm:h-75 bg-primary/5 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 relative">
@@ -25,7 +25,7 @@ const Footer = () => {
           viewport={{ once: true }}
           className="text-center mb-8 sm:mb-10"
         >
-          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">
             SHREE BHAGAVAT
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base">Tourism & Travels</p>
@@ -43,7 +43,7 @@ const Footer = () => {
             href="tel:+918866229022"
             className="flex items-center gap-2 px-3 sm:px-6 py-2 sm:py-3 rounded-full bg-card border border-border hover:border-primary/50 hover:bg-primary/5 transition-all text-xs sm:text-sm font-medium"
           >
-            <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-primary flex-shrink-0" />
+            <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0" />
             <span className="hidden sm:inline">+91 88662 29022</span>
             <span className="sm:hidden">Call 1</span>
           </a>
@@ -51,7 +51,7 @@ const Footer = () => {
             href={`tel:+91${WHATSAPP_SECONDARY}`}
             className="flex items-center gap-2 px-3 sm:px-6 py-2 sm:py-3 rounded-full bg-card border border-border hover:border-secondary/50 hover:bg-secondary/5 transition-all text-xs sm:text-sm font-medium"
           >
-            <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-secondary flex-shrink-0" />
+            <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-secondary shrink-0" />
             <span className="hidden sm:inline">+91 81286 51355</span>
             <span className="sm:hidden">Call 2</span>
           </a>
@@ -61,7 +61,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-3 sm:px-6 py-2 sm:py-3 rounded-full bg-green-500 text-white font-semibold text-xs sm:text-sm hover:bg-green-600 transition-colors shadow-md hover:shadow-lg"
           >
-            <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+            <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
             <span>WhatsApp</span>
           </a>
         </motion.div>
@@ -74,12 +74,12 @@ const Footer = () => {
           transition={{ delay: 0.2 }}
           className="flex items-center justify-center gap-2 text-muted-foreground mb-8 sm:mb-10 text-xs sm:text-base px-2"
         >
-          <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-accent flex-shrink-0" />
+          <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-accent shrink-0" />
           <span>Zanzarda Road, Junagadh, Gujarat</span>
         </motion.div>
 
         {/* Divider */}
-        <div className="w-full max-w-xs mx-auto h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent mb-6 sm:mb-8" />
+        <div className="w-full max-w-xs mx-auto h-px bg-linear-to-r from-transparent via-primary/50 to-transparent mb-6 sm:mb-8" />
 
         {/* Copyright */}
         <motion.div

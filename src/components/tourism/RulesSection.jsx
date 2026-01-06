@@ -30,7 +30,7 @@ const RulesSection = () => {
           <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3">
             {t("rulesTitle")}
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto rounded-full" />
+          <div className="w-20 h-1 bg-linear-to-r from-primary via-secondary to-accent mx-auto rounded-full" />
         </motion.div>
 
         {/* Rules Grid */}
@@ -56,7 +56,7 @@ const RulesSection = () => {
                 <p className="text-sm text-muted-foreground leading-relaxed">{t(`rule.${rule}.text`)}</p>
 
                 {/* Accent Line */}
-                <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-primary to-accent rounded-full transition-all duration-300 mt-4" />
+                <div className="w-0 group-hover:w-full h-1 bg-linear-to-r from-primary to-accent rounded-full transition-all duration-300 mt-4" />
               </div>
             </motion.div>
           ))}

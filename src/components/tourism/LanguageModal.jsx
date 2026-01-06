@@ -56,7 +56,7 @@ const LanguageModal = ({ isOpen, onClose }) => {
                   onClick={() => handleSelectLanguage("en")}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-primary to-secondary text-primary-foreground font-bold text-lg transition-shadow hover:shadow-lg shadow-md"
+                  className="w-full py-4 px-6 rounded-xl bg-linear-to-r from-primary to-secondary text-primary-foreground font-bold text-lg transition-shadow hover:shadow-lg shadow-md"
                 >
                   English
                 </motion.button>
@@ -66,7 +66,7 @@ const LanguageModal = ({ isOpen, onClose }) => {
                   onClick={() => handleSelectLanguage("gu")}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-accent to-secondary text-accent-foreground font-bold text-lg transition-shadow hover:shadow-lg shadow-md"
+                  className="w-full py-4 px-6 rounded-xl bg-linear-to-r from-accent to-secondary text-accent-foreground font-bold text-lg transition-shadow hover:shadow-lg shadow-md"
                 >
                   ગુજરાતી
                 </motion.button>
