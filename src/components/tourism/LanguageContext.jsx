@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react"
 
 const translations = {
   en: {
@@ -25,16 +25,16 @@ const translations = {
     "tour.21-01.days": "9/10 Days",
     "tour.21-01.daysNum": "10",
     "tour.21-01.price": "₹12,500",
-    "tour.21-01.places":
-      "Ayodhya, Kashi-Banaras, Khatu-Shyam, Salasar Balaji, Savariya",
+    "tour.21-01.places": "Ayodhya, Kashi-Banaras, Khatu-Shyam, Salasar Balaji, Savariya",
+    "tour.21-01.pdfUrl": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID_21-01",
 
     "tour.01-02.name": "Magh-kumbh Haridwar Specila",
     "tour.01-02.date": "01-02-2026",
     "tour.01-02.days": "13/14 Days",
     "tour.01-02.daysNum": "14",
     "tour.01-02.price": "₹15,500",
-    "tour.01-02.places":
-      "Ayodhya, Haridwar, Gokul-Mathura, Khatu-Shyam, Nathdwara",
+    "tour.01-02.places": "Ayodhya, Haridwar, Gokul-Mathura, Khatu-Shyam, Nathdwara",
+    "tour.01-02.pdfUrl": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID_01-02",
 
     "tour.15-02.name": "Nepal-Jagnnathpuri-Champaran Special",
     "tour.15-02.date": "15-02-2026",
@@ -42,6 +42,7 @@ const translations = {
     "tour.15-02.daysNum": "20",
     "tour.15-02.price": "₹24,500",
     "tour.15-02.places": "Nepal, Champran, Jagnnathpuri, Ayodhya",
+    "tour.15-02.pdfUrl": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID_15-02",
 
     "tour.22-02.name": "Jagnnathpuri-Champaran Special",
     "tour.22-02.date": "22-02-2026",
@@ -49,6 +50,7 @@ const translations = {
     "tour.22-02.daysNum": "13",
     "tour.22-02.price": "₹14,500",
     "tour.22-02.places": "Jagannathpuri, Champaran, Ayodhya",
+    "tour.22-02.pdfUrl": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID_22-02",
 
     "itinerary.21-01.day1": "Departure from Junagadh (Night Travel)",
     "itinerary.21-01.day2": "Ujjain Darshan (Night Travel)",
@@ -68,8 +70,7 @@ const translations = {
     "itinerary.01-02.day5": "Banaras (Night Travel)",
     "itinerary.01-02.day6": "Ayodhya - Ram Mandir (Night Travel)",
     "itinerary.01-02.day7": "Haridwar (Night Stay)",
-    "itinerary.01-02.day8":
-      "Masuri - Hill Station (At Own Expense) & (Night Stay)",
+    "itinerary.01-02.day8": "Masuri - Hill Station (At Own Expense) & (Night Stay)",
     "itinerary.01-02.day9": "Rishikesh (At Own Expense) & (Night Travel)",
     "itinerary.01-02.day10": "Mathura & Vrindavan (Night Stay)",
     "itinerary.01-02.day11": "Govardhan-Jatipura-Barsana-Gokul (Night Travel)",
@@ -91,10 +92,8 @@ const translations = {
     "itinerary.15-02.day12": "Gangasagar (Night Stay)",
     "itinerary.15-02.day13": "Kolkata City Darshan (Night Travel)",
     "itinerary.15-02.day14": "Jagannathpuri (Night Stay)",
-    "itinerary.15-02.day15":
-      "Kornak (Surya-Mandir) & Sakhi-Gopal Temple (Night Travel)",
-    "itinerary.15-02.day16":
-      "Champaran Darshan - Holi Celebration (Night Stay)",
+    "itinerary.15-02.day15": "Kornak (Surya-Mandir) & Sakhi-Gopal Temple (Night Travel)",
+    "itinerary.15-02.day16": "Champaran Darshan - Holi Celebration (Night Stay)",
     "itinerary.15-02.day17": "Champaran Darshan (Night Stay)",
     "itinerary.15-02.day18": "Amarkantak (Night Travel)",
     "itinerary.15-02.day19": "Omkareshwar (Night Travel)",
@@ -108,8 +107,7 @@ const translations = {
     "itinerary.22-02.day6": "Ayodhya (Night Travel)",
     "itinerary.22-02.day7": "Gaya (Night Travel)",
     "itinerary.22-02.day8": "Jagannathpuri (Night Stay)",
-    "itinerary.22-02.day9":
-      "Kornak (Surya-Mandir) & Sakhi-Gopal Temple (Night Travel)",
+    "itinerary.22-02.day9": "Kornak (Surya-Mandir) & Sakhi-Gopal Temple (Night Travel)",
     "itinerary.22-02.day10": "Champaran - Holi Celebration (Night Stay)",
     "itinerary.22-02.day11": "Champaran (Night Stay)",
     "itinerary.22-02.day12": "Amarkantak (Night Travel)",
@@ -120,18 +118,17 @@ const translations = {
     "included.meals": "2 Times Meals + Morning Tea/Coffee",
     "included.room": "4-5 Person Room Sharing",
     "included.support": "Assistance & Safety",
+    "included.bus2x1": "Sleeper Coach Bus 2x1",
+    "included.bus2x2": "Sleeper Coach Bus 2x2",
 
     "rule.tentativeItinerary.title": "Tentative Itinerary",
-    "rule.tentativeItinerary.text":
-      "Day-by-day itinerary is tentative and subject to change.",
+    "rule.tentativeItinerary.text": "Day-by-day itinerary is tentative and subject to change.",
 
     "rule.conditionsChange.title": "Possible Changes",
-    "rule.conditionsChange.text":
-      "Changes may occur due to weather, road, or government conditions.",
+    "rule.conditionsChange.text": "Changes may occur due to weather, road, or government conditions.",
 
     "rule.managementRights.title": "Management Rights",
-    "rule.managementRights.text":
-      "Management reserves full rights to modify the schedule.",
+    "rule.managementRights.text": "Management reserves full rights to modify the schedule.",
 
     "rule.booking.title": "Booking Policy",
     "rule.booking.text":
@@ -152,15 +149,14 @@ const translations = {
     "rule.health.text":
       "Please carry your necessary medicines. The organizer reserves the right to modify the itinerary due to circumstances.",
 
+    downloadPdf: "Download Tour PDF",
+    pdfAvailable: "Tour Brochure Available",
+
     // Add bus type for each tour
     "tour.21-01.busType": "Sleeper Coach 2x1",
     "tour.01-02.busType": "Sleeper Coach 2x2",
     "tour.15-02.busType": "Sleeper Coach 2x1",
     "tour.22-02.busType": "Sleeper Coach 2x2",
-
-    // Update included section
-    "included.bus2x1": "Sleeper Coach Bus 2x1",
-    "included.bus2x2": "Sleeper Coach Bus 2x2",
   },
   gu: {
     heroTitle: "દિવ્ય યાત્રાનો અનુભવ",
@@ -184,16 +180,16 @@ const translations = {
     "tour.21-01.days": "9/10 દિવસ",
     "tour.21-01.daysNum": "10",
     "tour.21-01.price": "₹12,500",
-    "tour.21-01.places":
-      "અયોધ્યા, કાશી-બનારસ, ખાટુ-શ્યામ, સાલાસર બાલાજી, સાવરિયા",
+    "tour.21-01.places": "અયોધ્યા, કાશી-બનારસ, ખાટુ-શ્યામ, સાલાસર બાલાજી, સાવરિયા",
+    "tour.21-01.pdfUrl": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID_21-01",
 
     "tour.01-02.name": "માઘ-કુંભ હરિદ્વાર સ્પેશિયલ",
     "tour.01-02.date": "01-02-2026",
     "tour.01-02.days": "13/14 દિવસ",
     "tour.01-02.daysNum": "14",
     "tour.01-02.price": "₹15,500",
-    "tour.01-02.places":
-      "અયોધ્યા, હરિદ્વાર, ગોકુળ-મથુરા, ખાટુ-શ્યામ, નાથદ્વારા",
+    "tour.01-02.places": "અયોધ્યા, હરિદ્વાર, ગોકુળ-મથુરા, ખાટુ-શ્યામ, નાથદ્વારા",
+    "tour.01-02.pdfUrl": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID_01-02",
 
     "tour.15-02.name": "નેપાળ-જગન્નાથપુરી-ચંપારણ સ્પેશિયલ",
     "tour.15-02.date": "15-02-2026",
@@ -201,6 +197,7 @@ const translations = {
     "tour.15-02.daysNum": "20",
     "tour.15-02.price": "₹24,500",
     "tour.15-02.places": "નેપાળ, ચંપારણ, જગન્નાથપુરી, અયોધ્યા",
+    "tour.15-02.pdfUrl": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID_15-02",
 
     "tour.22-02.name": "જગન્નાથપુરી-ચંપારણ સ્પેશિયલ",
     "tour.22-02.date": "22-02-2026",
@@ -208,6 +205,7 @@ const translations = {
     "tour.22-02.daysNum": "13",
     "tour.22-02.price": "₹14,500",
     "tour.22-02.places": "જગન્નાથપુરી, ચંપારણ, અયોધ્યા",
+    "tour.22-02.pdfUrl": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID_22-02",
 
     "itinerary.21-01.day1": "જુનાગઢથી પ્રસ્થાન (રાત્રિ મુસાફરી)",
     "itinerary.21-01.day2": "ઉજ્જૈન દર્શન (રાત્રિ મુસાફરી)",
@@ -227,8 +225,7 @@ const translations = {
     "itinerary.01-02.day5": "બનારસ (રાત્રિ મુસાફરી)",
     "itinerary.01-02.day6": "અયોધ્યા - રામ મંદિર (રાત્રિ મુસાફરી)",
     "itinerary.01-02.day7": "હરિદ્વાર (રાત્રિ રોકાણ)",
-    "itinerary.01-02.day8":
-      "મસૂરી - હિલ સ્ટેશન (પોતાના ખર્ચે) અને (રાત્રિ રોકાણ)",
+    "itinerary.01-02.day8": "મસૂરી - હિલ સ્ટેશન (પોતાના ખર્ચે) અને (રાત્રિ રોકાણ)",
     "itinerary.01-02.day9": "ઋષિકેશ (પોતાના ખર્ચે) અને (રાત્રિ મુસાફરી)",
     "itinerary.01-02.day10": "મથુરા અને વૃંદાવન (રાત્રિ રોકાણ)",
     "itinerary.01-02.day11": "ગોવર્ધન-જતીપુરા-બરસાણા-ગોકુળ (રાત્રિ મુસાફરી)",
@@ -250,8 +247,7 @@ const translations = {
     "itinerary.15-02.day12": "ગંગાસાગર (રાત્રિ રોકાણ)",
     "itinerary.15-02.day13": "કોલકાતા શહેર દર્શન (રાત્રિ મુસાફરી)",
     "itinerary.15-02.day14": "જગન્નાથપુરી (રાત્રિ રોકાણ)",
-    "itinerary.15-02.day15":
-      "કોર્ણક (સૂર્ય-મંદિર) અને સાખી-ગોપાલ મંદિર (રાત્રિ મુસાફરી)",
+    "itinerary.15-02.day15": "કોર્ણક (સૂર્ય-મંદિર) અને સખી-ગોપાલ મંદિર (રાત્રિ મુસાફરી)",
     "itinerary.15-02.day16": "ચંપારણ દર્શન - હોળી ઉજવણી (રાત્રિ રોકાણ)",
     "itinerary.15-02.day17": "ચંપારણ દર્શન (રાત્રિ રોકાણ)",
     "itinerary.15-02.day18": "અમરકંટક (રાત્રિ મુસાફરી)",
@@ -262,13 +258,11 @@ const translations = {
     "itinerary.22-02.day2": "ડાકોર અને ઉજ્જૈન (રાત્રિ રોકાણ)",
     "itinerary.22-02.day3": "ઉજ્જૈન દર્શન (રાત્રિ મુસાફરી)",
     "itinerary.22-02.day4": "ચિત્રકૂટ (રાત્રિ રોકાણ)",
-    "itinerary.22-02.day5":
-      "પ્રયાગરાજ - ત્રિવેણી સ્નાન - બનારસ (રાત્રિ મુસાફરી)",
+    "itinerary.22-02.day5": "પ્રયાગરાજ - ત્રિવેણી સ્નાન - બનારસ (રાત્રિ મુસાફરી)",
     "itinerary.22-02.day6": "અયોધ્યા (રાત્રિ મુસાફરી)",
     "itinerary.22-02.day7": "ગયા (રાત્રિ મુસાફરી)",
     "itinerary.22-02.day8": "જગન્નાથપુરી (રાત્રિ રોકાણ)",
-    "itinerary.22-02.day9":
-      "કોર્ણક (સૂર્ય-મંદિર) અને સાખી-ગોપાલ મંદિર (રાત્રિ મુસાફરી)",
+    "itinerary.22-02.day9": "કોર્ણક (સૂર્ય-મંદિર) અને સાખી-ગોપાલ મંદિર (રાત્રિ મુસાફરી)",
     "itinerary.22-02.day10": "ચંપારણ - હોળી ઉજવણી (રાત્રિ રોકાણ)",
     "itinerary.22-02.day11": "ચંપારણ (રાત્રિ રોકાણ)",
     "itinerary.22-02.day12": "અમરકંટક (રાત્રિ મુસાફરી)",
@@ -279,68 +273,58 @@ const translations = {
     "included.meals": "૨ ટાઇમ જમવાનું + સવારની ચા/કોફી",
     "included.room": "૪-૫ વ્યક્તિ રૂમ શેરિંગ",
     "included.support": "સહાય અને સલામતી",
+    "included.bus2x1": "સ્લીપર કોચ બસ 2x1",
+    "included.bus2x2": "સ્લીપર કોચ બસ 2x2",
 
     "rule.tentativeItinerary.title": "અંદાજીત યાત્રા યોજના",
-    "rule.tentativeItinerary.text":
-      "દૈનિક યાત્રા યોજના અંદાજીત છે અને બદલાઈ શકે છે.",
+    "rule.tentativeItinerary.text": "દૈનિક યાત્રા યોજના અંદાજીત છે અને બદલાઈ શકે છે.",
 
     "rule.conditionsChange.title": "શરતો અનુસાર બદલાવ",
-    "rule.conditionsChange.text":
-      "આબોહવા, રસ્તા કે સરકારની શરતોને કારણે ફેરફાર થઈ શકે છે.",
+    "rule.conditionsChange.text": "આબોહવા, રસ્તા કે સરકારની શરતોને કારણે ફેરફાર થઈ શકે છે.",
 
     "rule.managementRights.title": "વ્યવસ્થાપક અધિકારો",
-    "rule.managementRights.text":
-      "યોજનામાં ફેરફાર કરવાનો સંપૂર્ણ અધિકાર વ્યવસ્થાપક પાસે રહેશે.",
+    "rule.managementRights.text": "યોજનામાં ફેરફાર કરવાનો સંપૂર્ણ અધિકાર વ્યવસ્થાપક પાસે રહેશે.",
 
     "rule.booking.title": "બુકિંગ નિયમ",
-    "rule.booking.text":
-      "સીટ કન્ફર્મ કરવા માટે ૫૦% એડવાન્સ પેમેન્ટ જરૂરી છે. બાકીના પૈસા ૧૦ દિવસ અગાઉ આપવાના રહેશે.",
+    "rule.booking.text": "સીટ કન્ફર્મ કરવા માટે ૫૦% એડવાન્સ પેમેન્ટ જરૂરી છે. બાકીના પૈસા ૧૦ દિવસ અગાઉ આપવાના રહેશે.",
     "rule.accommodation.title": "રહેવાની સગવડ",
-    "rule.accommodation.text":
-      "૪-૫ વ્યક્તિ વચ્ચે રૂમ અથવા કોમન હોલની વ્યવસ્થા. અલગ રૂમ સ્વ-ખર્ચે રહેશે.",
+    "rule.accommodation.text": "૪-૫ વ્યક્તિ વચ્ચે રૂમ અથવા કોમન હોલની વ્યવસ્થા. અલગ રૂમ સ્વ-ખર્ચે રહેશે.",
     "rule.luggage.title": "સામાનની જવાબદારી",
-    "rule.luggage.text":
-      "બસ પાસેથી ઉતારા સુધી સામાનની જવાબદારી પેસેન્જરની રહેશે. હળવુ બેડિંગ સાથે લાવવું.",
+    "rule.luggage.text": "બસ પાસેથી ઉતારા સુધી સામાનની જવાબદારી પેસેન્જરની રહેશે. હળવુ બેડિંગ સાથે લાવવું.",
     "rule.food.title": "જમવાની વ્યવસ્થા",
-    "rule.food.text":
-      "૨ ટાઇમ જમવાનું અને ૧ ટાઇમ ચા-કોફી. સંપૂર્ણ શુદ્ધ શાકાહારી ગુજરાતી ભોજન.",
+    "rule.food.text": "૨ ટાઇમ જમવાનું અને ૧ ટાઇમ ચા-કોફી. સંપૂર્ણ શુદ્ધ શાકાહારી ગુજરાતી ભોજન.",
     "rule.tickets.title": "એન્ટ્રી ટિકિટ",
-    "rule.tickets.text":
-      "દરેક પ્રકારની એન્ટ્રી ટિકિટ અને સાઇટસીન સ્વ-ખર્ચ રહેશે. સીટ નંબર વહેલા તે પહેલા ના ધોરણે.",
+    "rule.tickets.text": "દરેક પ્રકારની એન્ટ્રી ટિકિટ અને સાઇટસીન સ્વ-ખર્ચ રહેશે. સીટ નંબર વહેલા તે પહેલા ના ધોરણે.",
     "rule.health.title": "સ્વાસ્થ્ય અને સલામતી",
-    "rule.health.text":
-      "પોતાની જરૂરિયાત મુજબ દવા સાથે લેવાની રહેશે. સમય અને સંજોગો અનુસાર યાત્રામાં ફેરફાર કરવાનો હક આયોજકનો રહેશે.",
+    "rule.health.text": "પોતાની જરૂરિયાત મુજબ દવા સાથે લેવાની રહેશે. સમય અને સંજોગો અનુસાર યાત્રામાં ફેરફાર કરવાનો હક આયોજકનો રહેશે.",
 
+    downloadPdf: "ટુર PDF ડાઉનલોડ કરો",
+    pdfAvailable: "ટુર બ્રોશર ઉપલબ્ધ છે",
+
+    // Add bus type for each tour
     "tour.21-01.busType": "સ્લીપર કોચ 2x1",
     "tour.01-02.busType": "સ્લીપર કોચ 2x2",
     "tour.15-02.busType": "સ્લીપર કોચ 2x1",
     "tour.22-02.busType": "સ્લીપર કોચ 2x2",
-
-    "included.bus2x1": "સ્લીપર કોચ બસ 2x1",
-    "included.bus2x2": "સ્લીપર કોચ બસ 2x2",
   },
-};
+}
 
-const LanguageContext = createContext(undefined);
+const LanguageContext = createContext(undefined)
 
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState("en")
 
   const t = (key) => {
-    return translations[language][key] || key;
-  };
+    return translations[language][key] || key
+  }
 
-  return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
-      {children}
-    </LanguageContext.Provider>
-  );
-};
+  return <LanguageContext.Provider value={{ language, setLanguage, t }}>{children}</LanguageContext.Provider>
+}
 
 export const useLanguage = () => {
-  const context = useContext(LanguageContext);
+  const context = useContext(LanguageContext)
   if (!context) {
-    throw new Error("useLanguage must be used within a LanguageProvider");
+    throw new Error("useLanguage must be used within a LanguageProvider")
   }
-  return context;
-};
+  return context
+}

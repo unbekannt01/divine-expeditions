@@ -1,20 +1,30 @@
-"use client";
+"use client"
 
-import { motion, AnimatePresence } from "framer-motion";
-import { useLanguage } from "./LanguageContext.jsx";
-import { getBookingURL } from "../../utils/whatsapp.js";
-import { X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion"
+import { useLanguage } from "./LanguageContext.jsx"
+import { getBookingURL } from "../../utils/whatsapp.js"
+import { X, Download } from "lucide-react"
 
 const ItineraryModal = ({ isOpen, onClose, tourKey }) => {
-  const { t } = useLanguage();
+  const { t } = useLanguage()
 
-  const daysNum = Number.parseInt(t(`tour.${tourKey}.daysNum`));
-  const days = Array.from({ length: daysNum }, (_, i) => i + 1);
-  const tourName = t(`tour.${tourKey}.name`);
-  const tourPrice = t(`tour.${tourKey}.price`);
+  const daysNum = Number.parseInt(t(`tour.${tourKey}.daysNum`))
+  const days = Array.from({ length: daysNum }, (_, i) => i + 1)
+  const tourName = t(`tour.${tourKey}.name`)
+  const tourPrice = t(`tour.${tourKey}.price`)
 
   // Bus Type (Dynamic)
-  const busType = t(`tour.${tourKey}.busType`);
+  const busType = t(`tour.${tourKey}.busType`)
+
+  const pdfUrl = t(`tour.${tourKey}.pdfUrl`)
+
+  const handlePdfDownload = () => {
+    if (pdfUrl && pdfUrl.includes("drive.google.com")) {
+      window.open(pdfUrl, "_blank")
+    } else {
+      alert("PDF not available for this tour yet.")
+    }
+  }
 
   return (
     <AnimatePresence>
@@ -39,12 +49,8 @@ const ItineraryModal = ({ isOpen, onClose, tourKey }) => {
             {/* Header */}
             <div className="sticky top-0 bg-white dark:bg-card border-b border-border p-4 sm:p-6 flex items-center justify-between gap-4 z-10">
               <div className="min-w-0 flex-1">
-                <h2 className="font-serif text-xl sm:text-2xl font-bold text-foreground line-clamp-2">
-                  {tourName}
-                </h2>
-                <p className="text-sm text-muted-foreground mt-1">
-                  {t(`tour.${tourKey}.days`)} Tour Package
-                </p>
+                <h2 className="font-serif text-xl sm:text-2xl font-bold text-foreground line-clamp-2">{tourName}</h2>
+                <p className="text-sm text-muted-foreground mt-1">{t(`tour.${tourKey}.days`)} Tour Package</p>
               </div>
               <motion.button
                 onClick={onClose}
@@ -58,6 +64,18 @@ const ItineraryModal = ({ isOpen, onClose, tourKey }) => {
 
             {/* Content */}
             <div className="p-4 sm:p-6 space-y-6">
+              <motion.button
+                onClick={handlePdfDownload}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full py-3 px-4 bg-linear-to-r from-blue-500 to-blue-600 text-white font-semibold rounded-lg hover:shadow-lg transition-shadow flex items-center justify-center gap-2 text-sm sm:text-base"
+              >
+                <Download className="w-5 h-5" />
+                {t("downloadPdf")}
+              </motion.button>
+
               {/* What's Included */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -98,9 +116,7 @@ const ItineraryModal = ({ isOpen, onClose, tourKey }) => {
 
               {/* Itinerary */}
               <div>
-                <h3 className="font-serif font-bold text-foreground mb-4 text-lg">
-                  Day-by-Day Itinerary
-                </h3>
+                <h3 className="font-serif font-bold text-foreground mb-4 text-lg">Day-by-Day Itinerary</h3>
                 <div className="space-y-3 max-h-75 overflow-y-auto pr-2">
                   {days.map((day) => (
                     <motion.div
@@ -116,9 +132,7 @@ const ItineraryModal = ({ isOpen, onClose, tourKey }) => {
                         </div>
                       </div>
                       <div className="grow min-w-0">
-                        <p className="text-xs sm:text-sm font-semibold">
-                          {t(`itinerary.${tourKey}.day${day}`)}
-                        </p>
+                        <p className="text-xs sm:text-sm font-semibold">{t(`itinerary.${tourKey}.day${day}`)}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -143,7 +157,10 @@ const ItineraryModal = ({ isOpen, onClose, tourKey }) => {
         </>
       )}
     </AnimatePresence>
-  );
-};
+  )
+}
 
-export default ItineraryModal;
+export default ItineraryModal
+
+
+
