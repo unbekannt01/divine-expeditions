@@ -1,0 +1,211 @@
+@layer base {
+  :root {
+    /* Warm Gold & Deep Saffron Primary */
+    --primary: 39 89% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Deep Purple Accent */
+    --secondary: 267 90% 38%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Vibrant Saffron */
+    --accent: 32 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Soft Backgrounds */
+    --background: 60 20% 98%;
+    --foreground: 220 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
+
+    --muted: 210 20% 92%;
+    --muted-foreground: 220 12% 48%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 39 89% 45%;
+
+    --radius: 1rem;
+  }
+
+  .dark {
+    --primary: 39 89% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 267 90% 48%;
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 32 100% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --background: 220 20% 8%;
+    --foreground: 60 10% 95%;
+
+    --card: 220 20% 13%;
+    --card-foreground: 60 10% 95%;
+
+    --popover: 220 20% 13%;
+    --popover-foreground: 60 10% 95%;
+
+    --muted: 220 15% 25%;
+    --muted-foreground: 210 10% 68%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 28%;
+    --input: 220 15% 28%;
+    --ring: 39 89% 55%;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Premium Pilgrimage Tourism Design System - Modern & Mobile-First */
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Typography - Serif for headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif;
+    letter-spacing: -0.025em;
+  }
+}
+
+@layer components {
+  /* Premium Card with Elevation */
+  .premium-card {
+    background-color: hsl(var(--card));
+    border-radius: 1rem;
+    border: 1px solid hsl(var(--border) / 0.4);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    transition: box-shadow 0.3s;
+  }
+
+  .premium-card:hover {
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    background-image: linear-gradient(to right, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--accent)));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  /* Glassmorphism Effect */
+  .glass-effect {
+    background-color: rgb(255 255 255 / 0.3);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgb(255 255 255 / 0.2);
+    border-radius: 1rem;
+  }
+
+  /* Premium Button */
+  .premium-btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.3s;
+  }
+
+  .premium-btn:hover {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+
+  .premium-btn:active {
+    transform: scale(0.95);
+  }
+
+  /* Mobile-First Responsive Typography */
+  @media (max-width: 640px) {
+    h1 { font-size: 1.875rem; line-height: 2.25rem; }
+    h2 { font-size: 1.5rem; line-height: 2rem; }
+    h3 { font-size: 1.25rem; line-height: 1.75rem; }
+  }
+
+  @media (min-width: 641px) and (max-width: 1024px) {
+    h1 { font-size: 3rem; line-height: 1; }
+    h2 { font-size: 2.25rem; line-height: 2.5rem; }
+    h3 { font-size: 1.5rem; line-height: 2rem; }
+  }
+
+  @media (min-width: 1025px) {
+    h1 { font-size: 3.75rem; line-height: 1; }
+    h2 { font-size: 3rem; line-height: 1; }
+    h3 { font-size: 1.875rem; line-height: 2.25rem; }
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.8);
+}
+
+/* Smooth animations */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
