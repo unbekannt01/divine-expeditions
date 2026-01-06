@@ -4,7 +4,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "./LanguageContext.jsx";
 import ItineraryModal from "./ItineraryModal.jsx";
-import { tourImages } from "@/data/tourImages"; // ✅ ADD THIS
+import { tourImages } from "@/data/tourImages";
+import { Calendar } from "lucide-react";
 
 const TourCard = ({ tourKey, index }) => {
   const { t } = useLanguage();
@@ -15,6 +16,18 @@ const TourCard = ({ tourKey, index }) => {
   const price = t(`tour.${tourKey}.price`);
   const places = t(`tour.${tourKey}.places`).split(", ");
   const busType = t(`tour.${tourKey}.busType`);
+  const journeyDate = t(`tour.${tourKey}.date`); // ✅ Get journey date
+
+  // Format date for better display
+  const formatDate = (dateStr) => {
+    const [day, month, year] = dateStr.split("-");
+    const date = new Date(year, month - 1, day);
+    return date.toLocaleDateString('en-IN', { 
+      day: '2-digit', 
+      month: 'short', 
+      year: 'numeric' 
+    });
+  };
 
   return (
     <>
@@ -53,6 +66,14 @@ const TourCard = ({ tourKey, index }) => {
           <h3 className="font-serif text-lg sm:text-xl font-bold text-foreground mb-3 line-clamp-2">
             {name}
           </h3>
+
+          {/* Journey Date - NEW */}
+          <div className="flex items-center gap-2 mb-3 text-primary">
+            <Calendar className="w-4 h-4 shrink-0" />
+            <p className="text-xs sm:text-sm font-semibold">
+              {formatDate(journeyDate)}
+            </p>
+          </div>
 
           <div className="mb-4 grow">
             <p className="text-[10px] sm:text-xs font-bold text-accent/80 tracking-widest mb-2 uppercase">
