@@ -84,11 +84,11 @@ const HeroSection = () => {
             ॐ
           </div>
           <div className="text-left">
-            <p className="font-serif text-xl sm:text-2xl md:text-3xl font-bold bg-linear-to-r from-primary to-secondary bg-clip-text text-black">
-              SHREE BHAGAVAT
+            <p className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold bg-linear-to-r from-primary to-secondary bg-clip-text text-black">
+              श्री भागवत
             </p>
 
-            <p className="text-sm sm:text-base md:text-lg text-muted-foreground font-medium">
+            <p className="text-lg sm:text-xl md:text-2xl font-medium text-accent mt-1 sm:mt-2 text-center">
               Tourism
             </p>
           </div>

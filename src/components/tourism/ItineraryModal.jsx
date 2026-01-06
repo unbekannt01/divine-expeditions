@@ -13,6 +13,9 @@ const ItineraryModal = ({ isOpen, onClose, tourKey }) => {
   const tourName = t(`tour.${tourKey}.name`);
   const tourPrice = t(`tour.${tourKey}.price`);
 
+  // Bus Type (Dynamic)
+  const busType = t(`tour.${tourKey}.busType`);
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -35,7 +38,6 @@ const ItineraryModal = ({ isOpen, onClose, tourKey }) => {
           >
             {/* Header */}
             <div className="sticky top-0 bg-white dark:bg-card border-b border-border p-4 sm:p-6 flex items-center justify-between gap-4 z-10">
-              {" "}
               <div className="min-w-0 flex-1">
                 <h2 className="font-serif text-xl sm:text-2xl font-bold text-foreground line-clamp-2">
                   {tourName}
@@ -66,8 +68,20 @@ const ItineraryModal = ({ isOpen, onClose, tourKey }) => {
                   <span className="text-xl">✓</span>
                   {t("whatsIncluded")}
                 </h3>
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {["bus", "meals", "room", "support"].map((item, i) => (
+                  {/* Bus Type (Dynamic, Separate) */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    className="flex items-start gap-2 text-xs sm:text-sm text-foreground"
+                  >
+                    <span className="text-primary mt-0.5">✓</span>
+                    <span>{busType}</span>
+                  </motion.div>
+
+                  {/* Other Included Items */}
+                  {["meals", "room", "support"].map((item, i) => (
                     <motion.div
                       key={item}
                       initial={{ opacity: 0, x: -10 }}

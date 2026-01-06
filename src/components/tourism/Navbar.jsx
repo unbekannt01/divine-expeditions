@@ -34,7 +34,7 @@ const Navbar = () => {
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="font-serif text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+            className="font-serif text-lg sm:text-xl md:text-2xl font-bold bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent"
           >
             SHREE BHAGAVAT
           </motion.div>
@@ -62,8 +62,8 @@ const Navbar = () => {
 
             {/* Call */}
             <a
-              href="tel:+918866229022"
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary to-secondary text-primary-foreground font-medium hover:opacity-90 transition-opacity shadow-md hover:shadow-lg"
+              href="tel:+919510116262"
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-linear-to-r from-primary to-secondary text-primary-foreground font-medium hover:opacity-90 transition-opacity shadow-md hover:shadow-lg"
             >
               <Phone className="w-4 h-4" />
               Call Now
@@ -103,11 +103,11 @@ const Navbar = () => {
 
               {/* Phone */}
               <a
-                href="tel:+918866229022"
+                href="tel:+919510116262"
                 className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-primary/10 text-primary font-medium text-sm hover:bg-primary/20 transition"
               >
                 <Phone className="w-5 h-5" />
-                +91 88662 29022
+                +91 95101 16262
               </a>
 
               {/* WhatsApp */}

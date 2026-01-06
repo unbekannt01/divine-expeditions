@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Phone, MessageCircle } from "lucide-react"
-import { getWhatsAppURL, WHATSAPP_NUMBER, WHATSAPP_SECONDARY } from "@/utils/whatsapp.js"
+import { getWhatsAppURL, WHATSAPP_NUMBER } from "@/utils/whatsapp.js"
 
 const ContactButtons = ({ variant = "row", className = "" }) => {
   const whatsappURL = getWhatsAppURL("Hello! I am interested in booking a pilgrimage tour. Please provide details.")
@@ -41,7 +41,7 @@ const ContactButtons = ({ variant = "row", className = "" }) => {
         <span className="sm:hidden">+91</span>
       </motion.a>
 
-      {/* Secondary Phone Button (Mobile hidden for space) */}
+      {/* Secondary Phone Button (Mobile hidden for space)
       <motion.a
         href={`tel:+91${WHATSAPP_SECONDARY}`}
         {...buttonVariants}
@@ -50,7 +50,7 @@ const ContactButtons = ({ variant = "row", className = "" }) => {
       >
         <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
         <span>Call 2</span>
-      </motion.a>
+      </motion.a> */}
     </div>
   )
 }

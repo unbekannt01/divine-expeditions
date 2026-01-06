@@ -1,25 +1,33 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { useLanguage } from "./LanguageContext.jsx"
-import ItineraryModal from "./ItineraryModal.jsx"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { useLanguage } from "./LanguageContext.jsx";
+import ItineraryModal from "./ItineraryModal.jsx";
+
+/* Import local images (Vite way) */
+import kumbhImg from "../../../public/images/Kumbh.jpg";
+import haridwarImg from "../../../public/images/haridwar.jpg";
+import nepalImg from "../../../public/images/nepal.jpg";
+import puriImg from "../../../public/images/puri.jpg";
 
 const TourCard = ({ tourKey, index }) => {
-  const { t } = useLanguage()
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const { t } = useLanguage();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const name = t(`tour.${tourKey}.name`)
-  const daysNum = t(`tour.${tourKey}.daysNum`)
-  const price = t(`tour.${tourKey}.price`)
-  const places = t(`tour.${tourKey}.places`).split(", ")
+  const name = t(`tour.${tourKey}.name`);
+  const daysNum = t(`tour.${tourKey}.daysNum`);
+  const price = t(`tour.${tourKey}.price`);
+  const places = t(`tour.${tourKey}.places`).split(", ");
+  const busType = t(`tour.${tourKey}.busType`);
 
+  /* Map tourKey to local images */
   const tourImages = {
-    rajasthan: "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&h=400&fit=crop",
-    sangam: "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=600&h=400&fit=crop",
-    prayagraj: "https://images.unsplash.com/photo-1548013146-72479768bada?w=600&h=400&fit=crop",
-    nepal: "https://images.unsplash.com/photo-1585577529540-b44e9831ef4e?w=600&h=400&fit=crop",
-  }
+    "21-01": kumbhImg, // Mahakumbh / Kumbh Mela
+    "01-02": haridwarImg, // Haridwar Ganga Aarti
+    "15-02": nepalImg, // Muktinath Nepal
+    "22-02": puriImg, // Jagannath Puri
+  };
 
   return (
     <>
@@ -33,15 +41,22 @@ const TourCard = ({ tourKey, index }) => {
         {/* Image Container */}
         <div className="relative h-40 sm:h-48 overflow-hidden bg-muted">
           <img
-            src={tourImages[tourKey] || "/placeholder.svg"}
+            src={tourImages[tourKey]}
             alt={name}
             loading="lazy"
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           />
+
           {/* Days Badge */}
-          <div className="absolute top-3 left-3 px-3 py-1.5 bg-linear-to-r from-accent to-primary text-accent-foreground text-xs sm:text-sm font-bold rounded-full shadow-lg">
+          <div className="absolute top-3 left-3 px-3 py-1.5 rounded-full bg-white text-black font-bold text-xs sm:text-sm shadow-md border border-border">
             {daysNum} {t("days").toUpperCase()}
           </div>
+
+          {/* Bus Type Badge */}
+          <div className="absolute top-3 right-3 px-3 py-1.5 rounded-full bg-white text-black font-bold text-xs sm:text-sm shadow-md border border-border">
+            {busType}
+          </div>
+
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-linear-to-t from-foreground/40 via-transparent to-transparent" />
         </div>
@@ -49,7 +64,9 @@ const TourCard = ({ tourKey, index }) => {
         {/* Content */}
         <div className="p-4 sm:p-5 flex flex-col grow">
           {/* Title */}
-          <h3 className="font-serif text-lg sm:text-xl font-bold text-foreground mb-3 line-clamp-2">{name}</h3>
+          <h3 className="font-serif text-lg sm:text-xl font-bold text-foreground mb-3 line-clamp-2">
+            {name}
+          </h3>
 
           {/* Destinations */}
           <div className="mb-4 grow">
@@ -71,6 +88,7 @@ const TourCard = ({ tourKey, index }) => {
                 {price}
               </p>
             </div>
+
             <motion.button
               onClick={() => setIsModalOpen(true)}
               whileHover={{ scale: 1.05 }}
@@ -84,9 +102,13 @@ const TourCard = ({ tourKey, index }) => {
       </motion.div>
 
       {/* Itinerary Modal */}
-      <ItineraryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} tourKey={tourKey} />
+      <ItineraryModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        tourKey={tourKey}
+      />
     </>
-  )
-}
+  );
+};
 
-export default TourCard
+export default TourCard;

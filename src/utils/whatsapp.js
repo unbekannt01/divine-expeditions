@@ -4,8 +4,7 @@
  */
 
 // Main WhatsApp number (with country code, no + or spaces)
-const WHATSAPP_NUMBER = "918866229022"
-const WHATSAPP_SECONDARY = "918128651355"
+const WHATSAPP_NUMBER = "919510116262"
 
 /**
  * Generate WhatsApp URL with message
@@ -65,10 +64,7 @@ export const formatPhoneNumber = (number) => {
   if (number === WHATSAPP_NUMBER) {
     return "+91 88662 29022"
   }
-  if (number === WHATSAPP_SECONDARY) {
-    return "+91 81286 51355"
-  }
   return number
 }
 
-export { WHATSAPP_NUMBER, WHATSAPP_SECONDARY }
+export { WHATSAPP_NUMBER }

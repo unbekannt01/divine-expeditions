@@ -1,12 +1,22 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useLanguage } from "./LanguageContext.jsx"
+import { motion } from "framer-motion";
+import { useLanguage } from "./LanguageContext.jsx";
 
 const RulesSection = () => {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
 
-  const rules = ["booking", "accommodation", "luggage", "food", "tickets", "health"]
+  const rules = [
+    "booking",
+    "accommodation",
+    "luggage",
+    "food",
+    "tickets",
+    "health",
+    "tentativeItinerary",
+    "conditionsChange",
+    "managementRights"
+  ];
 
   const icons = {
     booking: "📋",
@@ -15,7 +25,10 @@ const RulesSection = () => {
     food: "🍴",
     tickets: "🎫",
     health: "⚕️",
-  }
+    tentativeItinerary: "🗓️",
+    conditionsChange: "🌦️",
+    managementRights: "⚖️",
+  };
 
   return (
     <section className="py-16 sm:py-20 md:py-28 relative bg-muted/30">
@@ -49,11 +62,15 @@ const RulesSection = () => {
                 {/* Icon & Title */}
                 <div className="flex items-start gap-3 mb-4">
                   <div className="text-3xl">{icons[rule]}</div>
-                  <h3 className="font-serif text-lg font-bold text-primary flex-1">{t(`rule.${rule}.title`)}</h3>
+                  <h3 className="font-serif text-lg font-bold text-primary flex-1">
+                    {t(`rule.${rule}.title`)}
+                  </h3>
                 </div>
 
                 {/* Content */}
-                <p className="text-sm text-muted-foreground leading-relaxed">{t(`rule.${rule}.text`)}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {t(`rule.${rule}.text`)}
+                </p>
 
                 {/* Accent Line */}
                 <div className="w-0 group-hover:w-full h-1 bg-linear-to-r from-primary to-accent rounded-full transition-all duration-300 mt-4" />
@@ -63,7 +80,7 @@ const RulesSection = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default RulesSection
+export default RulesSection;

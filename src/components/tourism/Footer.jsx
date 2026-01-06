@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Phone, MessageCircle, MapPin, Heart } from "lucide-react"
-import { useLanguage } from "./LanguageContext.jsx"
-import { getInquiryURL, WHATSAPP_SECONDARY } from "../../utils/whatsapp.js"
+import { motion } from "framer-motion";
+import { Phone, MessageCircle, MapPin, Heart } from "lucide-react";
+import { useLanguage } from "./LanguageContext.jsx";
+import { getInquiryURL } from "../../utils/whatsapp.js";
 
 const Footer = () => {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
 
-  const whatsappURL = getInquiryURL()
+  const whatsappURL = getInquiryURL();
 
   return (
     <footer className="relative py-12 sm:py-16 border-t border-border bg-muted/30">
@@ -28,7 +28,9 @@ const Footer = () => {
           <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">
             SHREE BHAGAVAT
           </h2>
-          <p className="text-muted-foreground text-sm sm:text-base">Tourism & Travels</p>
+          <p className="text-muted-foreground text-sm sm:text-base">
+            Tourism & Travels
+          </p>
         </motion.div>
 
         {/* Contact Buttons */}
@@ -40,20 +42,12 @@ const Footer = () => {
           className="flex flex-wrap justify-center gap-2 sm:gap-3 lg:gap-4 mb-8 sm:mb-10 px-2"
         >
           <a
-            href="tel:+918866229022"
+            href="tel:+919510116262"
             className="flex items-center gap-2 px-3 sm:px-6 py-2 sm:py-3 rounded-full bg-card border border-border hover:border-primary/50 hover:bg-primary/5 transition-all text-xs sm:text-sm font-medium"
           >
             <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0" />
-            <span className="hidden sm:inline">+91 88662 29022</span>
+            <span className="hidden sm:inline">+91 95101 16262</span>
             <span className="sm:hidden">Call 1</span>
-          </a>
-          <a
-            href={`tel:+91${WHATSAPP_SECONDARY}`}
-            className="flex items-center gap-2 px-3 sm:px-6 py-2 sm:py-3 rounded-full bg-card border border-border hover:border-secondary/50 hover:bg-secondary/5 transition-all text-xs sm:text-sm font-medium"
-          >
-            <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-secondary shrink-0" />
-            <span className="hidden sm:inline">+91 81286 51355</span>
-            <span className="sm:hidden">Call 2</span>
           </a>
           <a
             href={whatsappURL}
@@ -89,14 +83,18 @@ const Footer = () => {
           transition={{ delay: 0.3 }}
           className="text-center"
         >
-          <p className="text-muted-foreground text-xs sm:text-sm">{t("footerText")}</p>
+          <p className="text-muted-foreground text-xs sm:text-sm">
+            {t("footerText")}
+          </p>
           <p className="text-muted-foreground/60 text-xs sm:text-sm mt-2 flex items-center justify-center gap-1">
-            Made with <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-accent fill-accent" /> for pilgrims
+            Made with{" "}
+            <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-red-500 fill-red-500" />
+            for तीर्थयात्री
           </p>
         </motion.div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
