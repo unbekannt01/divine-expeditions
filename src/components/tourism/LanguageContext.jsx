@@ -170,7 +170,7 @@ const translations = {
     toursTitle: "પવિત્ર યાત્રાઓ ૨૦૨૬",
     rulesTitle: "મહત્વપૂર્ણ માહિતી",
     galleryTitle: "દિવ્ય સ્થળો",
-    footerText: "© ૨૦૨૬ શ્રીભાગવત ટૂરિઝમ એન્ડ ટ્રાવેલ્સ. સર્વાધિકાર સુરક્ષિત.",
+    footerText: "© ૨૦૨૬ શ્રીભાગવત ટૂરિઝમ. સર્વાધિકાર સુરક્ષિત.",
     bookNow: "આ ટૂર બુક કરો",
     days: "દિવસ",
     viewItinerary: "યાત્રા જુઓ",
