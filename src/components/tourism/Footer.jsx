@@ -25,11 +25,11 @@ const Footer = () => {
           viewport={{ once: true }}
           className="text-center mb-8 sm:mb-10"
         >
-          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">
-            SHREE BHAGAVAT
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold bg-linear-to-r from-primary to-secondary bg-clip-text text-black mb-2">
+            Shree Bhagavat
           </h2>
-          <p className="text-muted-foreground text-sm sm:text-base">
-            Tourism & Travels
+          <p className="text-muted-foreground text-base sm:text-xl md:text-2x1 lg:text-2xl text-center font-medium">
+            Tourism
           </p>
         </motion.div>
 
